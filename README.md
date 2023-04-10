@@ -2,8 +2,8 @@
 
 =================
 
-Implementation of the [OBDH system](https://github.com/STR-UPM/OBDH_LABS/tree/master/PROJECT)
-using a modified [TASTE toolchain](https://taste.tools/).
+Code skeletons of the [OBDH system](https://github.com/STR-UPM/OBDH_LABS/tree/master/PROJECT)
+using a modified [TASTE toolchain](https://taste.tools/) that generates automatically the code skeletons for cFS applications.
 
 ![UPMSat 2 cFS Model](assets/upmsat2_cfs_model.png "UPMSat2 cFS Model")
 
