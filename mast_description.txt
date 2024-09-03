@@ -1,0 +1,1220 @@
+Model (
+   Model_Name      	=> cfs_mast_description,
+   Model_Date      	=> 2024-09-03,
+   System_Pip_Behaviour=> STRICT);
+
+
+
+
+
+Processing_Resource (
+   Type               	=> Regular_Processor,
+   Name               	=> demo
+   );
+
+Scheduler (
+   Type        	=> Primary_Scheduler,
+   Name        	=> demo,
+   Host        	=> demo,
+   Policy      	=>
+  	( Type             	=> Fixed_Priority,
+    	Max_Priority     	=> 101,
+    	Min_Priority     	=> 1));
+
+
+
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => acs_algorithm_step_out,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => acs_algorithm_msg_step_out,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => acs_algorithm_step_out,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => acs_algorithm_msg_step_out,
+   Worst_Case_Execution_Time  => );
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => acs_algorithm_step_in,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => acs_algorithm_step_in,
+   Worst_Case_Execution_Time  => );
+
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => acs_hw_mgm_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => acs_hw_msg_mgm_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => acs_hw_mgm_data,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => acs_hw_msg_mgm_data,
+   Worst_Case_Execution_Time  => );
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => acs_hw_mgt_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => acs_hw_mgt_data,
+   Worst_Case_Execution_Time  => );
+
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => manager_current_mode,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => manager_msg_current_mode,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => manager_current_mode,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => manager_msg_current_mode,
+   Worst_Case_Execution_Time  => );
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => manager_process_tc,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => manager_process_tc,
+   Worst_Case_Execution_Time  => );
+
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => measurer_and_actuator_mgt_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => measurer_and_actuator_msg_mgt_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => measurer_and_actuator_mgt_data,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => measurer_and_actuator_msg_mgt_data,
+   Worst_Case_Execution_Time  => );
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => measurer_and_actuator_step_in,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => measurer_and_actuator_msg_step_in,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => measurer_and_actuator_step_in,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => measurer_and_actuator_msg_step_in,
+   Worst_Case_Execution_Time  => );
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => measurer_and_actuator_mgm_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => measurer_and_actuator_mgm_data,
+   Worst_Case_Execution_Time  => );
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => measurer_and_actuator_step_out,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => measurer_and_actuator_step_out,
+   Worst_Case_Execution_Time  => );
+
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => platform_set_pressure_state,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => platform_msg_set_pressure_state,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => platform_set_pressure_state,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => platform_msg_set_pressure_state,
+   Worst_Case_Execution_Time  => );
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => platform_set_temperature_state,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => platform_msg_set_temperature_state,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => platform_set_temperature_state,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => platform_msg_set_temperature_state,
+   Worst_Case_Execution_Time  => );
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => platform_sensor_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => platform_sensor_data,
+   Worst_Case_Execution_Time  => );
+
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => pressure_sensor_sensor_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => pressure_sensor_msg_sensor_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => pressure_sensor_sensor_data,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => pressure_sensor_msg_sensor_data,
+   Worst_Case_Execution_Time  => );
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => pressure_sensor_set_pressure_state,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => pressure_sensor_set_pressure_state,
+   Worst_Case_Execution_Time  => );
+
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => storage_get_res,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => storage_msg_get_res,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => storage_get_res,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => storage_msg_get_res,
+   Worst_Case_Execution_Time  => );
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => storage_last,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => storage_msg_last,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => storage_last,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => storage_msg_last,
+   Worst_Case_Execution_Time  => );
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => storage_get_req,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => storage_get_req,
+   Worst_Case_Execution_Time  => );
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => storage_sensor_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => storage_sensor_data,
+   Worst_Case_Execution_Time  => );
+
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => temperature_sensor_sensor_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => temperature_sensor_msg_sensor_data,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => temperature_sensor_sensor_data,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => temperature_sensor_msg_sensor_data,
+   Worst_Case_Execution_Time  => );
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => temperature_sensor_set_temperature_state,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => temperature_sensor_set_temperature_state,
+   Worst_Case_Execution_Time  => );
+
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => ttc_get_req,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => ttc_msg_get_req,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => ttc_get_req,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => ttc_msg_get_req,
+   Worst_Case_Execution_Time  => );
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => ttc_process_tc,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => ttc_msg_process_tc,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 1,
+        Preassigned  => NO),
+Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => ttc_process_tc,
+   Worst_Case_Execution_Time  => );
+
+Operation (
+   Type                       => Simple,
+   Name                       => ttc_msg_process_tc,
+   Worst_Case_Execution_Time  => );
+
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => ttc_current_mode,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => ttc_current_mode,
+   Worst_Case_Execution_Time  => );
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => ttc_get_res,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => ttc_get_res,
+   Worst_Case_Execution_Time  => );
+Scheduling_Server (
+   Type                       => Regular,
+   Name                       => ttc_last,
+   Server_Sched_Parameters    =>
+      ( Type         => Fixed_Priority_Policy,
+        The_Priority => 2,
+        Preassigned  => NO),
+   Scheduler                  => demo);
+
+Operation (
+   Type                       => Simple,
+   Name                       => ttc_last,
+   Worst_Case_Execution_Time  => );
+
+
+
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_acs_algorithm_step_out_measurer_and_actuator,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> step_out1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => step_out2),
+		  ( Type => Regular,
+      	Name => step_out3),
+    	( Type => Regular,
+      	Name => step_out4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => step_out1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> step_out1,
+  	Output_Event   	=> step_out2,
+  	Activity_Operation => acs_algorithm_step_out,
+  	Activity_Server	=> acs_algorithm_step_out),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> step_out2,
+  	Output_Event   	=> step_out3,
+  	Activity_Operation => acs_algorithm_msg_step_out,
+  	Activity_Server	=> acs_algorithm_msg_step_out),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> step_out3,
+  	Output_Event   	=> step_out4,
+  	Activity_Operation => measurer_and_actuator_step_out,
+  	Activity_Server	=> measurer_and_actuator_step_out)
+));
+
+
+
+
+
+
+
+
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_acs_hw_mgm_data_measurer_and_actuator,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> mgm_data1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => mgm_data2),
+		  ( Type => Regular,
+      	Name => mgm_data3),
+    	( Type => Regular,
+      	Name => mgm_data4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => mgm_data1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> mgm_data1,
+  	Output_Event   	=> mgm_data2,
+  	Activity_Operation => acs_hw_mgm_data,
+  	Activity_Server	=> acs_hw_mgm_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> mgm_data2,
+  	Output_Event   	=> mgm_data3,
+  	Activity_Operation => acs_hw_msg_mgm_data,
+  	Activity_Server	=> acs_hw_msg_mgm_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> mgm_data3,
+  	Output_Event   	=> mgm_data4,
+  	Activity_Operation => measurer_and_actuator_mgm_data,
+  	Activity_Server	=> measurer_and_actuator_mgm_data)
+));
+
+
+
+
+
+
+
+
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_manager_current_mode_ttc,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> current_mode1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => current_mode2),
+		  ( Type => Regular,
+      	Name => current_mode3),
+    	( Type => Regular,
+      	Name => current_mode4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => current_mode1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> current_mode1,
+  	Output_Event   	=> current_mode2,
+  	Activity_Operation => manager_current_mode,
+  	Activity_Server	=> manager_current_mode),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> current_mode2,
+  	Output_Event   	=> current_mode3,
+  	Activity_Operation => manager_msg_current_mode,
+  	Activity_Server	=> manager_msg_current_mode),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> current_mode3,
+  	Output_Event   	=> current_mode4,
+  	Activity_Operation => ttc_current_mode,
+  	Activity_Server	=> ttc_current_mode)
+));
+
+
+
+
+
+
+
+
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_measurer_and_actuator_mgt_data_acs_hw,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> mgt_data1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => mgt_data2),
+		  ( Type => Regular,
+      	Name => mgt_data3),
+    	( Type => Regular,
+      	Name => mgt_data4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => mgt_data1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> mgt_data1,
+  	Output_Event   	=> mgt_data2,
+  	Activity_Operation => measurer_and_actuator_mgt_data,
+  	Activity_Server	=> measurer_and_actuator_mgt_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> mgt_data2,
+  	Output_Event   	=> mgt_data3,
+  	Activity_Operation => measurer_and_actuator_msg_mgt_data,
+  	Activity_Server	=> measurer_and_actuator_msg_mgt_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> mgt_data3,
+  	Output_Event   	=> mgt_data4,
+  	Activity_Operation => acs_hw_mgt_data,
+  	Activity_Server	=> acs_hw_mgt_data)
+));
+
+
+
+
+
+
+
+
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_measurer_and_actuator_step_in_acs_algorithm,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> step_in1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => step_in2),
+		  ( Type => Regular,
+      	Name => step_in3),
+    	( Type => Regular,
+      	Name => step_in4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => step_in1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> step_in1,
+  	Output_Event   	=> step_in2,
+  	Activity_Operation => measurer_and_actuator_step_in,
+  	Activity_Server	=> measurer_and_actuator_step_in),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> step_in2,
+  	Output_Event   	=> step_in3,
+  	Activity_Operation => measurer_and_actuator_msg_step_in,
+  	Activity_Server	=> measurer_and_actuator_msg_step_in),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> step_in3,
+  	Output_Event   	=> step_in4,
+  	Activity_Operation => acs_algorithm_step_in,
+  	Activity_Server	=> acs_algorithm_step_in)
+));
+
+
+
+
+
+
+
+
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_pressure_sensor_sensor_data_platform,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> sensor_data1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => sensor_data2),
+		  ( Type => Regular,
+      	Name => sensor_data3),
+    	( Type => Regular,
+      	Name => sensor_data4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => sensor_data1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data1,
+  	Output_Event   	=> sensor_data2,
+  	Activity_Operation => pressure_sensor_sensor_data,
+  	Activity_Server	=> pressure_sensor_sensor_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data2,
+  	Output_Event   	=> sensor_data3,
+  	Activity_Operation => pressure_sensor_msg_sensor_data,
+  	Activity_Server	=> pressure_sensor_msg_sensor_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data3,
+  	Output_Event   	=> sensor_data4,
+  	Activity_Operation => platform_sensor_data,
+  	Activity_Server	=> platform_sensor_data)
+));
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_pressure_sensor_sensor_data_storage,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> sensor_data1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => sensor_data2),
+		  ( Type => Regular,
+      	Name => sensor_data3),
+    	( Type => Regular,
+      	Name => sensor_data4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => sensor_data1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data1,
+  	Output_Event   	=> sensor_data2,
+  	Activity_Operation => pressure_sensor_sensor_data,
+  	Activity_Server	=> pressure_sensor_sensor_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data2,
+  	Output_Event   	=> sensor_data3,
+  	Activity_Operation => pressure_sensor_msg_sensor_data,
+  	Activity_Server	=> pressure_sensor_msg_sensor_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data3,
+  	Output_Event   	=> sensor_data4,
+  	Activity_Operation => storage_sensor_data,
+  	Activity_Server	=> storage_sensor_data)
+));
+
+
+
+
+
+
+
+
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_storage_get_res_ttc,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> get_res1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => get_res2),
+		  ( Type => Regular,
+      	Name => get_res3),
+    	( Type => Regular,
+      	Name => get_res4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => get_res1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> get_res1,
+  	Output_Event   	=> get_res2,
+  	Activity_Operation => storage_get_res,
+  	Activity_Server	=> storage_get_res),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> get_res2,
+  	Output_Event   	=> get_res3,
+  	Activity_Operation => storage_msg_get_res,
+  	Activity_Server	=> storage_msg_get_res),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> get_res3,
+  	Output_Event   	=> get_res4,
+  	Activity_Operation => ttc_get_res,
+  	Activity_Server	=> ttc_get_res)
+));
+
+
+
+
+
+
+
+
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_storage_last_ttc,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> last1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => last2),
+		  ( Type => Regular,
+      	Name => last3),
+    	( Type => Regular,
+      	Name => last4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => last1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> last1,
+  	Output_Event   	=> last2,
+  	Activity_Operation => storage_last,
+  	Activity_Server	=> storage_last),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> last2,
+  	Output_Event   	=> last3,
+  	Activity_Operation => storage_msg_last,
+  	Activity_Server	=> storage_msg_last),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> last3,
+  	Output_Event   	=> last4,
+  	Activity_Operation => ttc_last,
+  	Activity_Server	=> ttc_last)
+));
+
+
+
+
+
+
+
+
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_temperature_sensor_sensor_data_platform,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> sensor_data1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => sensor_data2),
+		  ( Type => Regular,
+      	Name => sensor_data3),
+    	( Type => Regular,
+      	Name => sensor_data4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => sensor_data1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data1,
+  	Output_Event   	=> sensor_data2,
+  	Activity_Operation => temperature_sensor_sensor_data,
+  	Activity_Server	=> temperature_sensor_sensor_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data2,
+  	Output_Event   	=> sensor_data3,
+  	Activity_Operation => temperature_sensor_msg_sensor_data,
+  	Activity_Server	=> temperature_sensor_msg_sensor_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data3,
+  	Output_Event   	=> sensor_data4,
+  	Activity_Operation => platform_sensor_data,
+  	Activity_Server	=> platform_sensor_data)
+));
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_temperature_sensor_sensor_data_storage,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> sensor_data1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => sensor_data2),
+		  ( Type => Regular,
+      	Name => sensor_data3),
+    	( Type => Regular,
+      	Name => sensor_data4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => sensor_data1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data1,
+  	Output_Event   	=> sensor_data2,
+  	Activity_Operation => temperature_sensor_sensor_data,
+  	Activity_Server	=> temperature_sensor_sensor_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data2,
+  	Output_Event   	=> sensor_data3,
+  	Activity_Operation => temperature_sensor_msg_sensor_data,
+  	Activity_Server	=> temperature_sensor_msg_sensor_data),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> sensor_data3,
+  	Output_Event   	=> sensor_data4,
+  	Activity_Operation => storage_sensor_data,
+  	Activity_Server	=> storage_sensor_data)
+));
+
+
+
+
+
+
+
+
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_ttc_get_req_storage,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> get_req1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => get_req2),
+		  ( Type => Regular,
+      	Name => get_req3),
+    	( Type => Regular,
+      	Name => get_req4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => get_req1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> get_req1,
+  	Output_Event   	=> get_req2,
+  	Activity_Operation => ttc_get_req,
+  	Activity_Server	=> ttc_get_req),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> get_req2,
+  	Output_Event   	=> get_req3,
+  	Activity_Operation => ttc_msg_get_req,
+  	Activity_Server	=> ttc_msg_get_req),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> get_req3,
+  	Output_Event   	=> get_req4,
+  	Activity_Operation => storage_get_req,
+  	Activity_Server	=> storage_get_req)
+));
+
+
+
+
+
+
+
+
+
+
+
+Transaction (
+   Type        	=> regular,
+   Name        	=> trans_ttc_process_tc_manager,
+   External_Events =>
+  	(
+     	( Type   	=> Sporadic,
+      	Name   	=> process_tc1,
+      	Min_Interarrival =>  0,
+		Avg_Interarrival => 
+      	)),
+   Internal_Events =>
+  	(
+		  ( Type => Regular,
+      	Name => process_tc2),
+		  ( Type => Regular,
+      	Name => process_tc3),
+    	( Type => Regular,
+      	Name => process_tc4,
+      	Timing_Requirements =>
+        	( Type         	=> Hard_Global_Deadline,
+
+          	Referenced_Event => process_tc1))),
+   Event_Handlers =>
+   (
+  	(Type           	=> Activity,
+  	Input_Event    	=> process_tc1,
+  	Output_Event   	=> process_tc2,
+  	Activity_Operation => ttc_process_tc,
+  	Activity_Server	=> ttc_process_tc),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> process_tc2,
+  	Output_Event   	=> process_tc3,
+  	Activity_Operation => ttc_msg_process_tc,
+  	Activity_Server	=> ttc_msg_process_tc),
+	    	(Type           	=> Activity,
+  	Input_Event    	=> process_tc3,
+  	Output_Event   	=> process_tc4,
+  	Activity_Operation => manager_process_tc,
+  	Activity_Server	=> manager_process_tc)
+));
+
+
+
+
+
+
+

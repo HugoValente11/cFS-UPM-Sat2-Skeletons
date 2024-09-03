@@ -1,0 +1,98 @@
+CFE_LIB, cfe_assert,  CFE_Assert_LibInit, ASSERT_LIB,    0,   0,     0x0, 0;
+CFE_LIB, dataview_lib,  DATAVIEW_Init,    DATAVIEW_LIB,    0,   0,     0x0, 0;
+CFE_LIB, sample_lib,  SAMPLE_LIB_Init,    SAMPLE_LIB,    0,   0,     0x0, 0;
+CFE_APP, sample_app,  SAMPLE_APP_Main,    SAMPLE_APP,   50,   16384, 0x0, 0;
+CFE_APP, ci_lab,      CI_Lab_AppMain,     CI_LAB_APP,   60,   16384, 0x0, 0;
+CFE_APP, to_lab,      TO_Lab_AppMain,     TO_LAB_APP,   70,   16384, 0x0, 0;
+CFE_APP, sch_lab,     SCH_Lab_AppMain,    SCH_LAB_APP,  80,   16384, 0x0, 0;
+
+CFE_APP, acs_algorithm_app, ACS_ALGORITHM_APP_Main, ACS_ALGORITHM_APP,  100,  16384, 0x0, 0;
+CFE_APP, acs_hw_app, ACS_HW_APP_Main, ACS_HW_APP,  100,  16384, 0x0, 0;
+CFE_APP, manager_app, MANAGER_APP_Main, MANAGER_APP,  100,  16384, 0x0, 0;
+CFE_APP, measurer_and_actuator_app, MEASURER_AND_ACTUATOR_APP_Main, MEASURER_AND_ACTUATOR_APP,  100,  16384, 0x0, 0;
+CFE_APP, platform_app, PLATFORM_APP_Main, PLATFORM_APP,  100,  16384, 0x0, 0;
+CFE_APP, pressure_sensor_app, PRESSURE_SENSOR_APP_Main, PRESSURE_SENSOR_APP,  100,  16384, 0x0, 0;
+CFE_APP, storage_app, STORAGE_APP_Main, STORAGE_APP,  100,  16384, 0x0, 0;
+CFE_APP, temperature_sensor_app, TEMPERATURE_SENSOR_APP_Main, TEMPERATURE_SENSOR_APP,  100,  16384, 0x0, 0;
+CFE_APP, ttc_app, TTC_APP_Main, TTC_APP,  100,  16384, 0x0, 0;
+
+!
+! Startup script fields:
+! 1. Object Type      -- CFE_APP for an Application, or CFE_LIB for a library.
+! 2. Path/Filename    -- This is a cFE Virtual filename, not a vxWorks device/pathname
+! 3. Entry Point      -- This is the "main" function for Apps.
+! 4. CFE Name         -- The cFE name for the APP or Library
+! 5. Priority         -- This is the Priority of the App, not used for Library
+! 6. Stack Size       -- This is the Stack size for the App, not used for the Library
+! 7. Load Address     -- This is the Optional Load Address for the App or Library. Currently not implemented
+!                        so keep it at 0x0.
+! 8. Exception Action -- This is the Action the cFE should take if the App has an exception.
+!                        0        = Just restart the Application
+!                        Non-Zero = Do a cFE Processor Reset
+!
+! Other  Notes:
+! 1. The software will not try to parse anything after the first '!' character it sees. That
+!    is the End of File marker.
+! 2. Common Application file extensions:
+!    Linux = .so  ( ci.so )
+!    OS X  = .bundle  ( ci.bundle )
+!    Cygwin = .dll ( ci.dll )
+!    vxWorks = .o ( ci.o )
+!    RTEMS with S-record Loader = .s3r ( ci.s3r )
+!    RTEMS with CEXP Loader = .o ( ci.o )
+! 3. The filename field (2) no longer requires a fully-qualified filename; the path and extension
+!    may be omitted.  If omitted, the standard virtual path (/cf) and a platform-specific default
+!    extension will be used, which is derived from the build system.
+
+
+
+demo            : Partition name (usually the name of the binary)
+
+
+
+
+
+
+
+
+
+
+
+         : Code generated for the threads
+acs_algorithm_Step_Out, acs_hw_MGM_Data, manager_Current_Mode, measurer_and_actuator_MGT_Data, measurer_and_actuator_Step_In, pressure_sensor_Sensor_data, storage_Get_Res, storage_Last, temperature_sensor_Sensor_data, ttc_Get_Req, ttc_Process_TC    : Tag: list of thread names
+node_linux       : Name of the node containing this partition
+
+CFE_APP, acs_algorithm_app, ACS_ALGORITHM_APP_Main, ACS_ALGORITHM_APP,  100,  16384, 0x0, 0;
+CFE_APP, acs_hw_app, ACS_HW_APP_Main, ACS_HW_APP,  100,  16384, 0x0, 0;
+CFE_APP, manager_app, MANAGER_APP_Main, MANAGER_APP,  100,  16384, 0x0, 0;
+CFE_APP, measurer_and_actuator_app, MEASURER_AND_ACTUATOR_APP_Main, MEASURER_AND_ACTUATOR_APP,  100,  16384, 0x0, 0;
+CFE_APP, platform_app, PLATFORM_APP_Main, PLATFORM_APP,  100,  16384, 0x0, 0;
+CFE_APP, pressure_sensor_app, PRESSURE_SENSOR_APP_Main, PRESSURE_SENSOR_APP,  100,  16384, 0x0, 0;
+CFE_APP, storage_app, STORAGE_APP_Main, STORAGE_APP,  100,  16384, 0x0, 0;
+CFE_APP, temperature_sensor_app, TEMPERATURE_SENSOR_APP_Main, TEMPERATURE_SENSOR_APP,  100,  16384, 0x0, 0;
+CFE_APP, ttc_app, TTC_APP_Main, TTC_APP,  100,  16384, 0x0, 0;          : Code generated for protected functions
+ACS_Algorithm, ACS_HW, Manager, Measurer_and_Actuator, Platform, Pressure_sensor, Storage, Temperature_sensor, TTC      : Vector Tag: list of block (user functions) names
+C, C, C, C, C, C, C, C, C  :   |_ Corresponding implementation language
+:  |_ Name of parent function (if instance)
+FALSE        : True if user requested code coverage enable
+ocarina_processors_x86    : AADL Package name for the target (e.g. ocarina_porocessors_x86)
+x86_linux        : CPU Name (e.g. x86_linux)
+PLATFORM_NATIVE    : AADL CPU_Platform (e.g. PLATFORM_NATIVE)
+ocarina_processors_x86::x86.linux  : AADL CPU Classifier (e.g. ocarina_processors_x86::x86.linux)
+x86      : e.g. gr740 or x86
+linux    : e.g. rtems51_posix or linux
+         : Virtual processor name on which the partition is bounded
+PLATFORM_NONE     : Virtual processor platform (e.g. PLATFORM_AIR)
+   : Virtual processor classifier
+     : Set if CPU_Platform = PLATFORM_GNAT_RUNTIME
+measurer_and_actuator, storage, ttc, manager, temperature_sensor, acs_algorithm, pressure_sensor, acs_hw, platform : List of user functions from Interface view
+acs_algorithm_Step_Out, acs_hw_MGM_Data, manager_Current_Mode, measurer_and_actuator_MGT_Data, measurer_and_actuator_MGT_Data, measurer_and_actuator_Step_In, measurer_and_actuator_Step_In, storage_Get_Res, storage_Get_Res, storage_Get_Res, storage_Last, storage_Last, storage_Last, ttc_Get_Req, ttc_Get_Req, ttc_Get_Req, ttc_Process_TC, ttc_Process_TC, ttc_Process_TC : Vector tag : connection thread name (source)
+measurer_and_actuator_Step_In, measurer_and_actuator_MGT_Data, ttc_Process_TC, acs_hw_MGM_Data, acs_algorithm_Step_Out, acs_hw_MGM_Data, acs_algorithm_Step_Out, ttc_Get_Req, pressure_sensor_Sensor_data, temperature_sensor_Sensor_data, ttc_Get_Req, pressure_sensor_Sensor_data, temperature_sensor_Sensor_data, manager_Current_Mode, storage_Get_Res, storage_Last, manager_Current_Mode, storage_Get_Res, storage_Last : Vector tag : connection thread name (dest)
+ACS_Algorithm_Step_In_Measurer_and_Actuator_Step_In, ACS_HW_MGT_Data_Measurer_and_Actuator_MGT_Data, Manager_Process_TC_TTC_Process_TC, Measurer_and_Actuator_MGM_Data_ACS_HW_MGM_Data, Measurer_and_Actuator_Step_Out_ACS_Algorithm_Step_Out, Measurer_and_Actuator_MGM_Data_ACS_HW_MGM_Data, Measurer_and_Actuator_Step_Out_ACS_Algorithm_Step_Out, Storage_Get_Req_TTC_Get_Req, Storage_Sensor_data_Pressure_sensor_Sensor_data, Storage_Sensor_data_Temperature_sensor_Sensor_data, Storage_Get_Req_TTC_Get_Req, Storage_Sensor_data_Pressure_sensor_Sensor_data, Storage_Sensor_data_Temperature_sensor_Sensor_data, TTC_Current_Mode_Manager_Current_Mode, TTC_Get_Res_Storage_Get_Res, TTC_Last_Storage_Last, TTC_Current_Mode_Manager_Current_Mode, TTC_Get_Res_Storage_Get_Res, TTC_Last_Storage_Last : Vector tag : connection port name (source)
+measurer_and_actuator_Step_In, measurer_and_actuator_MGT_Data, ttc_Process_TC, acs_hw_MGM_Data, acs_algorithm_Step_Out, acs_hw_MGM_Data, acs_algorithm_Step_Out, ttc_Get_Req, pressure_sensor_Sensor_data, temperature_sensor_Sensor_data, ttc_Get_Req, pressure_sensor_Sensor_data, temperature_sensor_Sensor_data, manager_Current_Mode, storage_Get_Res, storage_Last, manager_Current_Mode, storage_Get_Res, storage_Last : Vector tag : connection port name (dest)
+        : Vector tag: input ports of the partition
+  :     |_ corresponding thread inside the partition
+    :     |_ corresponding parameter type name (optional)
+       : Vector tag: output ports of the partition
+ :     |_ corresponding thread inside the partition
+   :     |_ corresponding parameter type name (optional)
